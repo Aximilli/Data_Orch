@@ -1,0 +1,45 @@
+project_type: standalone
+
+variables_dir: ~/.mage_data
+# remote_variables_dir: s3://bucket/path_prefix
+
+variables_retention_period: '90d'
+
+emr_config:
+  master_instance_type: ''
+spark_config:
+  # Application name
+  app_name: my spark app
+  spark_master: local
+  executor_env: {}
+  spark_jars: []
+  spark_home:
+  others: {}
+  use_custom_session: false
+  custom_session_var_name: spark
+help_improve_mage: true
+notification_config:
+  alert_on:
+  - trigger_failure
+  - trigger_passed_sla
+  slack_config:
+    webhook_url: "{{ env_var('MAGE_SLACK_WEBHOOK_URL') }}"
+  teams_config:
+    webhook_url: "{{ env_var('MAGE_TEAMS_WEBHOOK_URL') }}"
+project_uuid: 434787e5ef71488a8e3e514e2a2ddcfc
+features:
+  add_new_block_v2: true
+  automatic_kernel_cleanup: true
+  compute_management: true
+  custom_design: true
+  data_integration_in_batch_pipeline: true
+  dbt_v2: true
+  global_hooks: true
+  interactions: true
+  display_local_timezone: true
+  notebook_block_output_split_view: true
+  operation_history: true
+  polars: true
+  command_center: true
+pipelines:
+remote_variables_dir:
